@@ -18,8 +18,7 @@ class Hydrocron_Table:
 
     def exists(self, table_name):
         """
-        Determines whether a table exists. As a side effect, stores the table in
-        a member variable.
+        Determines whether a table exists. If table exists, load it.
 
         Parameters
         ----------
@@ -40,7 +39,7 @@ class Hydrocron_Table:
                 exists = False
             else:
                 logger.error(
-                    "Couldn't check for existence of %s. Here's why: %s: %s",
+                    "Couldn't check for existence of %s. %s: %s",
                     table_name,
                     err.response['Error']['Code'], err.response['Error']['Message'])
                 raise
@@ -50,9 +49,7 @@ class Hydrocron_Table:
     
     def create_table(self, table_name, partition_key, partition_key_type, sort_key, sort_key_type):
         """
-        Creates an Amazon DynamoDB table to store SWOT River Reach, Node, Lake data for the Hydrocron API.
-        The table uses the item id (reach_id, node_id, lake_id) as the partition key and
-        time as the sort key.
+        Creates an Amazon DynamoDB table to store SWOT River Reach, Node, or Lake data for the Hydrocron API.
 
         Parameters
         ---------
@@ -79,7 +76,7 @@ class Hydrocron_Table:
             self.table.wait_until_exists()
         except ClientError as err:
             logger.error(
-                "Couldn't create table %s. Here's why: %s: %s", table_name,
+                "Couldn't create table %s. %s: %s", table_name,
                 err.response['Error']['Code'], err.response['Error']['Message'])
             raise
         else:
@@ -101,8 +98,22 @@ class Hydrocron_Table:
                 tables.append(table)
         except ClientError as err:
             logger.error(
-                "Couldn't list tables. Here's why: %s: %s",
+                "Couldn't list tables. %s: %s",
                 err.response['Error']['Code'], err.response['Error']['Message'])
             raise
         else:
             return tables
+        
+
+    def delete_table(self):
+        """
+        Deletes the table.
+        """
+        try:
+            self.table.delete()
+            self.table = None
+        except ClientError as err:
+            logger.error(
+                "Couldn't delete table. %s: %s",
+                err.response['Error']['Code'], err.response['Error']['Message'])
+            raise
