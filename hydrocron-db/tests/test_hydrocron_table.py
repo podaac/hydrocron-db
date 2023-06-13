@@ -4,7 +4,8 @@ test_create_table.py
 ==============
 Test creating a Hydrocron dynamodb table.
 
-Unit tests for creating tables in the Hydrocron Database.
+Unit tests for creating tables in the Hydrocron Database. 
+Requires a local install of DynamoDB to be running. See https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html
 
 """
 import pytest
@@ -81,6 +82,7 @@ def test_delete_table(dyndb_resource_connection):
 def dyndb_resource_connection():
     '''
     Set up a boto3 resource connection to a local dynamodb instance. 
+    Assumes Local DynamoDB instance installed and running. See https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html 
 
     Returns
     -------
