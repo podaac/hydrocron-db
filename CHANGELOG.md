@@ -9,6 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-
+- [issue/2](https://github.com/podaac/hydrocron-db/issues/2) Initial code for creating SWOT reach/node DynamoDB tables.
 
 [unreleased]: https://github.com/podaac/hydrocron-db/compare/70540d6b0e8fc3d342edc62e8a3440e0e5b26043...HEAD
