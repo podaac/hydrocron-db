@@ -14,7 +14,8 @@ from decimal import Decimal
 import boto3
 import geopandas as gpd
 import pytest
-from hydrocron_database import Hydrocron_DB
+from hydrocron_database import HydrocronDB
+from hydrocron_database import DynamoKeys
 
 
 TEST_SHAPEFILE_PATH = (
@@ -28,29 +29,29 @@ TEST_TABLE_NAME = 'hydrocron_test_table'
 TEST_PARTITION_KEY_NAME = 'reach_id'
 TEST_SORT_KEY_NAME = 'time'
 
+DYNAMO_KEYS = DynamoKeys(
+            partition_key=TEST_PARTITION_KEY_NAME,
+            partition_key_type='S',
+            sort_key=TEST_SORT_KEY_NAME,
+            sort_key_type='N')
+
 
 def test_create_table(dynamo_instance):
     '''
     Tests table creation function
     '''
-
     if dynamo_instance.table_exists(TEST_TABLE_NAME):
         print(dynamo_instance.tables)
         dynamo_instance.delete_table(TEST_TABLE_NAME)
 
         hydrocron_test_table = dynamo_instance.create_table(
             TEST_TABLE_NAME,
-            partition_key=TEST_PARTITION_KEY_NAME,
-            partition_key_type='S',
-            sort_key=TEST_SORT_KEY_NAME,
-            sort_key_type='N')
+            DYNAMO_KEYS
+            )
     else:
         hydrocron_test_table = dynamo_instance.create_table(
             TEST_TABLE_NAME,
-            partition_key='reach_id',
-            partition_key_type='S',
-            sort_key='time',
-            sort_key_type='N')
+            DYNAMO_KEYS)
 
     assert dynamo_instance.table_exists(TEST_TABLE_NAME)
     assert hydrocron_test_table.table_name == TEST_TABLE_NAME
@@ -89,10 +90,7 @@ def test_add_data(dynamo_instance):
 
         hydrocron_test_table = dynamo_instance.create_table(
             TEST_TABLE_NAME,
-            partition_key='reach_id',
-            partition_key_type='S',
-            sort_key='time',
-            sort_key_type='N')
+            DYNAMO_KEYS)
 
         # read shapefile into geopandas dataframe
         shp_file = gpd.read_file(TEST_SHAPEFILE_PATH)
@@ -119,10 +117,7 @@ def test_query(dynamo_instance):
 
     hydrocron_test_table = dynamo_instance.create_table(
         TEST_TABLE_NAME,
-        partition_key='reach_id',
-        partition_key_type='S',
-        sort_key='time',
-        sort_key_type='N')
+        DYNAMO_KEYS)
 
     # read shapefile into geopandas dataframe
     shp_file = gpd.read_file(TEST_SHAPEFILE_PATH)
@@ -150,10 +145,7 @@ def test_delete_item(dynamo_instance):
 
     hydrocron_test_table = dynamo_instance.create_table(
         TEST_TABLE_NAME,
-        partition_key='reach_id',
-        partition_key_type='S',
-        sort_key='time',
-        sort_key_type='N')
+        DYNAMO_KEYS)
 
     # read shapefile into geopandas dataframe
     shp_file = gpd.read_file(TEST_SHAPEFILE_PATH)
@@ -182,10 +174,7 @@ def test_delete_table(dynamo_instance):
     else:
         dynamo_instance.create_table(
             TEST_TABLE_NAME,
-            partition_key='reach_id',
-            partition_key_type='S',
-            sort_key='time',
-            sort_key_type='N')
+            DYNAMO_KEYS)
 
         dynamo_instance.delete_table()
 
@@ -214,6 +203,6 @@ def dynamo_instance_fixture():
     dyndb_resource = session.resource(
         'dynamodb', endpoint_url='http://localhost:8000')
 
-    dynamo_instance = Hydrocron_DB(dyn_resource=dyndb_resource)
+    dynamo_instance = HydrocronDB(dyn_resource=dyndb_resource)
 
     return dynamo_instance
