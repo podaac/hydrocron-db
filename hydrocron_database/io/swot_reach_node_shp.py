@@ -4,7 +4,6 @@ Unpacks SWOT Reach & Node Shapefiles
 import os.path
 import json
 from datetime import datetime
-#from decimal import Decimal
 import geopandas as gpd
 
 
