@@ -1,20 +1,20 @@
 """
 Unpacks SWOT Reach & Node Shapefiles
 """
+import os.path
 import json
 from datetime import datetime
-from decimal import Decimal
 import geopandas as gpd
 
 
-def read_shapefile(filename):
+def read_shapefile(filepath):
     """
     Reads a SWOT River Reach shapefile
 
     Parameters
     ----------
     filename :  string
-        The name of the file to read
+        The full path to the file to read
 
     Returns
     -------
@@ -23,15 +23,16 @@ def read_shapefile(filename):
         to the database table
     """
 
-    shp_file = gpd.read_file(filename)
+    shp_file = gpd.read_file(filepath)
+
+    filename = os.path.basename(filepath)
     filename_attrs = parse_from_filename(filename)
 
     items = []
 
     for _index, row in shp_file.iterrows():
         shp_attrs = json.loads(
-            row.to_json(default_handler=str),
-            parse_float=Decimal)
+            row.to_json(default_handler=str))
 
         item_attrs = shp_attrs | filename_attrs
         items.append(item_attrs)

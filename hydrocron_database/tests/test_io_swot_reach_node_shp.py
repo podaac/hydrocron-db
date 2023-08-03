@@ -6,7 +6,6 @@ Test unpacking a swot reach or node shapefile.
 
 Unit tests for unpacking swot reach and node shapefiles.
 """
-from decimal import Decimal
 from hydrocron_database.io import swot_reach_node_shp
 
 TEST_SHAPEFILE_PATH = (

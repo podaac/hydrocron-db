@@ -19,7 +19,7 @@ from hydrocron_database.hydrocron_database import DynamoKeys
 
 
 TEST_SHAPEFILE_PATH = (
-    "hydrocron-db/tests/data/"
+    "hydrocron_database/tests/data/"
     "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
     "20230610T193337_20230610T193344_PIA1_01/"
     "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
