@@ -4,6 +4,7 @@ Unpacks SWOT Reach & Node Shapefiles
 import os.path
 import json
 from datetime import datetime
+#from decimal import Decimal
 import geopandas as gpd
 
 
@@ -24,6 +25,7 @@ def read_shapefile(filepath):
     """
 
     shp_file = gpd.read_file(filepath)
+    shp_file = shp_file.astype(str)
 
     filename = os.path.basename(filepath)
     filename_attrs = parse_from_filename(filename)

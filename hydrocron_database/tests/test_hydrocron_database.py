@@ -9,13 +9,11 @@ Requires a local install of DynamoDB to be running.
 See https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html # noqa
 
 """
-import json
-from decimal import Decimal
 import boto3
-import geopandas as gpd
 import pytest
 from hydrocron_database.hydrocron_database import HydrocronDB
 from hydrocron_database.hydrocron_database import DynamoKeys
+from hydrocron_database.io import swot_reach_node_shp
 
 
 TEST_SHAPEFILE_PATH = (
@@ -27,13 +25,13 @@ TEST_SHAPEFILE_PATH = (
 
 TEST_TABLE_NAME = 'hydrocron_test_table'
 TEST_PARTITION_KEY_NAME = 'reach_id'
-TEST_SORT_KEY_NAME = 'time'
+TEST_SORT_KEY_NAME = 'range_start_time'
 
 DYNAMO_KEYS = DynamoKeys(
             partition_key=TEST_PARTITION_KEY_NAME,
             partition_key_type='S',
             sort_key=TEST_SORT_KEY_NAME,
-            sort_key_type='N')
+            sort_key_type='S')
 
 
 def test_create_table(dynamo_instance):
@@ -92,15 +90,8 @@ def test_add_data(dynamo_instance):
             TEST_TABLE_NAME,
             DYNAMO_KEYS)
 
-        # read shapefile into geopandas dataframe
-        shp_file = gpd.read_file(TEST_SHAPEFILE_PATH)
-
-        item_attrs = {}
-        for _index, row in shp_file.iterrows():
-            # convert each reach into a dictionary of attributes
-            item_attrs = json.loads(row.to_json(
-                default_handler=str), parse_float=Decimal)
-
+        items = swot_reach_node_shp.read_shapefile(TEST_SHAPEFILE_PATH)
+        for item_attrs in items:
             # write to the table
             hydrocron_test_table.add_data(**item_attrs)
 
@@ -119,21 +110,14 @@ def test_query(dynamo_instance):
         TEST_TABLE_NAME,
         DYNAMO_KEYS)
 
-    # read shapefile into geopandas dataframe
-    shp_file = gpd.read_file(TEST_SHAPEFILE_PATH)
-
-    item_attrs = {}
-    for _index, row in shp_file.iterrows():
-        # convert each reach into a dictionary of attributes
-        item_attrs = json.loads(row.to_json(
-            default_handler=str), parse_float=Decimal)
-
+    items = swot_reach_node_shp.read_shapefile(TEST_SHAPEFILE_PATH)
+    for item_attrs in items:
         # write to the table
         hydrocron_test_table.add_data(**item_attrs)
 
     items = hydrocron_test_table.run_query(partition_key='71224100223')
 
-    assert items[0]['wse'] == Decimal(str(286.2983))
+    assert items[0]['wse'] == str(286.2983)
 
 
 def test_delete_item(dynamo_instance):
@@ -147,20 +131,13 @@ def test_delete_item(dynamo_instance):
         TEST_TABLE_NAME,
         DYNAMO_KEYS)
 
-    # read shapefile into geopandas dataframe
-    shp_file = gpd.read_file(TEST_SHAPEFILE_PATH)
-
-    item_attrs = {}
-    for _index, row in shp_file.iterrows():
-        # convert each reach into a dictionary of attributes
-        item_attrs = json.loads(row.to_json(
-            default_handler=str), parse_float=Decimal)
-
+    items = swot_reach_node_shp.read_shapefile(TEST_SHAPEFILE_PATH)
+    for item_attrs in items:
         # write to the table
         hydrocron_test_table.add_data(**item_attrs)
 
     hydrocron_test_table.delete_item(
-        partition_key='71224100203', sort_key=Decimal(-999999999999.000))
+        partition_key='71224100203', sort_key='2023-06-10T19:33:37Z')
     assert hydrocron_test_table.table.item_count == 686
 
 
