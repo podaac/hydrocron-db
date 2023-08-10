@@ -14,8 +14,8 @@ from decimal import Decimal
 import boto3
 import geopandas as gpd
 import pytest
-from hydrocron_database.hydrocron_database import HydrocronDB
-from hydrocron_database.hydrocron_database import DynamoKeys
+from hydrocron_db.hydrocron_database import HydrocronDB
+from hydrocron_db.hydrocron_database import DynamoKeys
 
 
 TEST_SHAPEFILE_PATH = (
