@@ -11,15 +11,12 @@ See https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLoc
 """
 import json
 from decimal import Decimal
-import boto3
 import geopandas as gpd
-import pytest
-from hydrocron_db.hydrocron_database import HydrocronDB
 from hydrocron_db.hydrocron_database import DynamoKeys
 
 
 TEST_SHAPEFILE_PATH = (
-    "hydrocron-db/tests/data/"
+    "tests/data/"
     "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
     "20230610T193337_20230610T193344_PIA1_01/"
     "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
@@ -36,42 +33,42 @@ DYNAMO_KEYS = DynamoKeys(
             sort_key_type='N')
 
 
-def test_create_table(dynamo_instance):
+def test_create_table(hydrocron_dynamo_instance):
     '''
     Tests table creation function
     '''
-    if dynamo_instance.table_exists(TEST_TABLE_NAME):
-        print(dynamo_instance.tables)
-        dynamo_instance.delete_table(TEST_TABLE_NAME)
+    if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
+        print(hydrocron_dynamo_instance.tables)
+        hydrocron_dynamo_instance.delete_table(TEST_TABLE_NAME)
 
-        hydrocron_test_table = dynamo_instance.create_table(
+        hydrocron_test_table = hydrocron_dynamo_instance.create_table(
             TEST_TABLE_NAME,
             DYNAMO_KEYS
             )
     else:
-        hydrocron_test_table = dynamo_instance.create_table(
+        hydrocron_test_table = hydrocron_dynamo_instance.create_table(
             TEST_TABLE_NAME,
             DYNAMO_KEYS)
 
-    assert dynamo_instance.table_exists(TEST_TABLE_NAME)
+    assert hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME)
     assert hydrocron_test_table.table_name == TEST_TABLE_NAME
 
 
-def test_table_exists(dynamo_instance):
+def test_table_exists(hydrocron_dynamo_instance):
     '''
     Test that a table exists in the database
     '''
 
-    assert dynamo_instance.table_exists(TEST_TABLE_NAME)
+    assert hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME)
 
 
-def test_list_tables(dynamo_instance):
+def test_list_tables(hydrocron_dynamo_instance):
     '''
     Test listing tables that exist in database
     '''
 
-    if dynamo_instance.table_exists(TEST_TABLE_NAME):
-        list_of_tables = dynamo_instance.list_tables()
+    if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
+        list_of_tables = hydrocron_dynamo_instance.list_tables()
 
         assert len(list_of_tables) > 0
         assert TEST_TABLE_NAME in list_of_tables
@@ -80,15 +77,15 @@ def test_list_tables(dynamo_instance):
         assert len(list_of_tables) == 0
 
 
-def test_add_data(dynamo_instance):
+def test_add_data(hydrocron_dynamo_instance):
     '''
     Test adding data from one Reach shapefile to db
     '''
 
-    if dynamo_instance.table_exists(TEST_TABLE_NAME):
-        dynamo_instance.delete_table(TEST_TABLE_NAME)
+    if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
+        hydrocron_dynamo_instance.delete_table(TEST_TABLE_NAME)
 
-        hydrocron_test_table = dynamo_instance.create_table(
+        hydrocron_test_table = hydrocron_dynamo_instance.create_table(
             TEST_TABLE_NAME,
             DYNAMO_KEYS)
 
@@ -107,15 +104,15 @@ def test_add_data(dynamo_instance):
     assert hydrocron_test_table.table.item_count == 687
 
 
-def test_query(dynamo_instance):
+def test_query(hydrocron_dynamo_instance):
     '''
     Test a query for a reach id
     '''
 
-    if dynamo_instance.table_exists(TEST_TABLE_NAME):
-        dynamo_instance.delete_table(TEST_TABLE_NAME)
+    if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
+        hydrocron_dynamo_instance.delete_table(TEST_TABLE_NAME)
 
-    hydrocron_test_table = dynamo_instance.create_table(
+    hydrocron_test_table = hydrocron_dynamo_instance.create_table(
         TEST_TABLE_NAME,
         DYNAMO_KEYS)
 
@@ -136,14 +133,14 @@ def test_query(dynamo_instance):
     assert items[0]['wse'] == Decimal(str(286.2983))
 
 
-def test_delete_item(dynamo_instance):
+def test_delete_item(hydrocron_dynamo_instance):
     '''
     Test delete an item
     '''
-    if dynamo_instance.table_exists(TEST_TABLE_NAME):
-        dynamo_instance.delete_table(TEST_TABLE_NAME)
+    if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
+        hydrocron_dynamo_instance.delete_table(TEST_TABLE_NAME)
 
-    hydrocron_test_table = dynamo_instance.create_table(
+    hydrocron_test_table = hydrocron_dynamo_instance.create_table(
         TEST_TABLE_NAME,
         DYNAMO_KEYS)
 
@@ -164,45 +161,18 @@ def test_delete_item(dynamo_instance):
     assert hydrocron_test_table.table.item_count == 686
 
 
-def test_delete_table(dynamo_instance):
+def test_delete_table(hydrocron_dynamo_instance):
     '''
     Test delete table
     '''
 
-    if dynamo_instance.table_exists(TEST_TABLE_NAME):
-        dynamo_instance.delete_table(TEST_TABLE_NAME)
+    if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
+        hydrocron_dynamo_instance.delete_table(TEST_TABLE_NAME)
     else:
-        dynamo_instance.create_table(
+        hydrocron_dynamo_instance.create_table(
             TEST_TABLE_NAME,
             DYNAMO_KEYS)
 
-        dynamo_instance.delete_table()
+        hydrocron_dynamo_instance.delete_table()
 
-    assert not dynamo_instance.table_exists(TEST_TABLE_NAME)
-
-
-@pytest.fixture(scope='session', name="dynamo_instance")
-def dynamo_instance_fixture():
-    '''
-    Set up a boto3 resource connection to a local dynamodb instance. 
-    Assumes Local DynamoDB instance installed and running. 
-    See https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html # noqa
-
-    Returns
-    -------
-    dyndb_resource
-        A dynamodb local resource
-    '''
-
-    session = boto3.session.Session(
-        aws_access_key_id='fake_access_key',
-        aws_secret_access_key='fake_secret_access_key',
-        aws_session_token='fake_session_token',
-        region_name='us-west-2')
-
-    dyndb_resource = session.resource(
-        'dynamodb', endpoint_url='http://localhost:8000')
-
-    dynamo_instance = HydrocronDB(dyn_resource=dyndb_resource)
-
-    return dynamo_instance
+    assert not hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME)
