@@ -9,7 +9,7 @@ Unit tests for unpacking swot reach and node shapefiles.
 from hydrocron_db.io import swot_reach_node_shp
 
 TEST_SHAPEFILE_PATH = (
-    "/tests/data/"
+    "tests/data/"
     "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
     "20230610T193337_20230610T193344_PIA1_01/"
     "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
@@ -51,4 +51,3 @@ def test_read_shapefile():
     assert len(items) == 687
     for key, val in TEST_ITEM_DICT.items():
         assert val == items[2][key]
-        
