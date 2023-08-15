@@ -38,7 +38,6 @@ def test_create_table(hydrocron_dynamo_instance):
     Tests table creation function
     '''
     if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
-        print(hydrocron_dynamo_instance.tables)
         hydrocron_dynamo_instance.delete_table(TEST_TABLE_NAME)
 
         hydrocron_test_table = hydrocron_dynamo_instance.create_table(
@@ -58,6 +57,10 @@ def test_table_exists(hydrocron_dynamo_instance):
     '''
     Test that a table exists in the database
     '''
+    hydrocron_dynamo_instance.create_table(
+            TEST_TABLE_NAME,
+            DYNAMO_KEYS
+            )
 
     assert hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME)
 
@@ -66,6 +69,10 @@ def test_list_tables(hydrocron_dynamo_instance):
     '''
     Test listing tables that exist in database
     '''
+    hydrocron_dynamo_instance.create_table(
+            TEST_TABLE_NAME,
+            DYNAMO_KEYS
+            )
 
     if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
         list_of_tables = hydrocron_dynamo_instance.list_tables()
@@ -81,6 +88,10 @@ def test_add_data(hydrocron_dynamo_instance):
     '''
     Test adding data from one Reach shapefile to db
     '''
+    hydrocron_dynamo_instance.create_table(
+            TEST_TABLE_NAME,
+            DYNAMO_KEYS
+            )
 
     if hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME):
         hydrocron_dynamo_instance.delete_table(TEST_TABLE_NAME)
@@ -173,6 +184,6 @@ def test_delete_table(hydrocron_dynamo_instance):
             TEST_TABLE_NAME,
             DYNAMO_KEYS)
 
-        hydrocron_dynamo_instance.delete_table()
+        hydrocron_dynamo_instance.delete_table(TEST_TABLE_NAME)
 
     assert not hydrocron_dynamo_instance.table_exists(TEST_TABLE_NAME)
