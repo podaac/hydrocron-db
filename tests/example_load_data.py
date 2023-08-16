@@ -17,7 +17,12 @@ def upload():
         print("ITEM")
         print(index)
         print("ROW")
-        print(row)
+        object = {}
+        for k, v in dict.items():
+            print(k)
+            print(v)
+            object[k] = {'S' : v}
+        print(object)
         #print(type(row))
         print("^^^^^^^^")
         #print(row.to_json(default_handler=str))
