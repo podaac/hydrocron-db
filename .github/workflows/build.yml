@@ -102,4 +102,4 @@ jobs:
 
       - name: Load sample
         # if: ${{ startsWith(github.ref, 'test') }}
-        run: python3 ../tests/example_load_data.py
+        run: python3 /home/runner/work/hydrocron-db/tests/example_load_data.py
