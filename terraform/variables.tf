@@ -1,4 +1,4 @@
-variable "app_name" {default = "hydrocron-api"}
+variable "app_name" {default = "hydrocron-d"}
 variable "db_app_name" {default = "hydrocron-db"}
 variable "stage" {}
 variable "vpc_id" {}
