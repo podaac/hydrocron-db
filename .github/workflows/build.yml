@@ -68,6 +68,16 @@ jobs:
           
           
 
+      ## Set environment variables
+      - name: Configure Initial YAML file and environment variables
+        run: |
+          echo "THE_VERSION=0.0.1" >> $GITHUB_ENV;
+          echo "GIT_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV;
+          GITHUB_REF_READABLE="${GITHUB_REF//\//-}"
+          echo "GITHUB_REF_READABLE=${GITHUB_REF_READABLE}" >> $GITHUB_ENV
+          echo "THE_ENV=sit" >> $GITHUB_ENV
+          echo "TARGET_ENV_UPPERCASE=SIT" >> $GITHUB_ENV
+
       # Setup Terraform to Deploy
 
       - name: Configure AWS Credentials as Environment Variables
@@ -88,16 +98,6 @@ jobs:
         with:
           terraform_version: 1.0.3
 
-
-      ## Set environment variables
-      - name: Configure Initial YAML file and environment variables
-        run: |
-          echo "THE_VERSION=0.0.1" >> $GITHUB_ENV;
-          echo "GIT_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV;
-          GITHUB_REF_READABLE="${GITHUB_REF//\//-}"
-          echo "GITHUB_REF_READABLE=${GITHUB_REF_READABLE}" >> $GITHUB_ENV
-          echo "THE_ENV=sit" >> $GITHUB_ENV
-          echo "TARGET_ENV_UPPERCASE=SIT" >> $GITHUB_ENV
 
       - name: Deploy Terraform
         #if: |
