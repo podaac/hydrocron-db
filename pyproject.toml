@@ -1,11 +1,15 @@
 [tool.poetry]
-name = "hydrocron-db"
-version = "0.1.0"
-description = "Backend database configuration for Hydrocron API"
-authors = ["Your Name <you@example.com>"]
+name = "hydrocron"
+version = "0.0.1"
+description = "Hydrocron API - tool for hydrology"
+authors = ["podaac-tva <podaac-tva@jpl.nasa.gov>"]
 license = "Apache-2.0"
 readme = "README.md"
-packages = []
+repository = "https://github.com/podaac/hydrocron-api"
+exclude = ['contrib', 'docs', 'tests']
+packages = [
+    { include = "tests" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
