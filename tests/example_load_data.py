@@ -27,7 +27,7 @@ table_name = 'hydrocron_swot_reaches'
 test_shapefile_path = 'tests/data/SWOT_L2_HR_RiverSP_Reach_548_011_NA_20230610T193337_20230610T193344_PIA1_01/SWOT_L2_HR_RiverSP_Reach_548_011_NA_20230610T193337_20230610T193344_PIA1_01.shp'
 
 print("list tables")
-print(dynamo_instance.list_tables())
+print(dynamo_instance.tables.all())
 
 if dynamo_instance.table_exists(table_name):
     print("table exists")
