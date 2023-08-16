@@ -17,6 +17,7 @@ def upload():
         print("item")
         print(index)
         print(row)
+        print("^^^^^^^^")
         print(row.to_json(default_handler=str))
         # convert each reach into a dictionary of attributes that dynamo can read
         item_attrs = json.loads(row.to_json(default_handler=str), parse_float=Decimal)
