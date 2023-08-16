@@ -23,6 +23,7 @@ def upload():
         #print(row.to_json(default_handler=str))
 
         test = {
+            'feature_id': {'S' : '71224100223'},
             'area_total': {'S' : '-999999999999'},
             'dschg_gcsf': {'S' : '-999999999999'},
             'dschg_b': {'S' : '-999999999999'},
