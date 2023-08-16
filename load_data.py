@@ -19,11 +19,7 @@ def setup_connection():
     -------
     dynamo_instance : HydrocronDB
     '''
-    session = boto3.session.Session(
-        aws_access_key_id='fake_access_key',
-        aws_secret_access_key='fake_secret_access_key',
-        aws_session_token='fake_session_token',
-        region_name='us-west-2')
+    session = boto3.session.Session()
 
     dyndb_resource = session.resource(
         'dynamodb',
@@ -68,7 +64,7 @@ def load_data(hydrocron_table, granule_path):
     granules : list of strings
         The list of S3 paths of granules to load data from
     '''
-
+    print(granule_path)
     if hydrocron_table.table_name == "hydrocron-swot-reach-table":
         if 'Reach' in granule_path:
             items = swot_reach_node_shp.read_shapefile(granule_path)
@@ -141,7 +137,7 @@ def run(table_name, start_date, end_date):
         end_date)
 
     for granule in new_granules:
-        load_data(hydrocron_table, granule)
+        load_data(hydrocron_table, granule[0])
 
 
 if __name__ == "__main__":
