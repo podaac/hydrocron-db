@@ -19,7 +19,7 @@ def upload():
         print("ROW")
         object = {}
         for k, v in row.items():
-            object[k] = {'S' : v}
+            object[k] = {'S' : str(v)}
         print(object)
         #print(type(row))
         print("^^^^^^^^")
