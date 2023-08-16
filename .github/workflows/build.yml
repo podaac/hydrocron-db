@@ -50,6 +50,7 @@ jobs:
           pip3 install pytest
           pip3 install connexion
           pip3 install flask_testing
+          pip3 install pytest_dynamodb
           
 
       ## Set environment variables
