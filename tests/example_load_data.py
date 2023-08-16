@@ -5,7 +5,6 @@
 
 
 from pytest_dynamodb import factories
-from tests.database_fixtures import hydrocron_dynamo_instance
 
 
 import boto3
@@ -15,8 +14,6 @@ import geopandas as gpd
 
 from hydrocron_database import Hydrocron_DB
 
-
-__all__ = ['hydrocron_dynamo_instance']
 
 dynamo_test_proc = factories.dynamodb_proc(
         dynamodb_dir="tests/dynamodb_local",
