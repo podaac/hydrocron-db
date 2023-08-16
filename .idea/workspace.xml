@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2226764-961b-4d6f-bae5-1862235f7311" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +97,7 @@
       <updated>1689259904557</updated>
       <workItem from="1689259906142" duration="4639000" />
       <workItem from="1691697703000" duration="2010000" />
-      <workItem from="1691703987514" duration="10263000" />
+      <workItem from="1691703987514" duration="10323000" />
     </task>
     <servers />
   </component>

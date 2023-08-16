@@ -51,7 +51,7 @@ resource "aws_dynamodb_table" "hydrocron_swot_reaches" {
     }
     point_in_time_recovery { enabled = true }
     server_side_encryption { enabled = true }
-    lifecycle { ignore_changes = [ "write_capacity", "read_capacity" ] }
+    lifecycle { ignore_changes = [ write_capacity, read_capacity ] }
 }
 
 module  "table_autoscaling" {
