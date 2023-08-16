@@ -56,7 +56,6 @@ def find_new_granules(collection_shortname, start_date, end_date):
     results = cmr_search.get()
 
     granule_paths = [g.data_links(access='direct') for g in results]
-    print(granule_paths)
     return granule_paths
 
 
@@ -97,8 +96,6 @@ def run(table_name, start_date, end_date):
 
     Parameters
     ----------
-    dynamo_instance : HydrocronDB
-        The Hydrocron database instance containing the table
     table_name : string
         The name of the table to load data to
     start_date : string
@@ -110,8 +107,16 @@ def run(table_name, start_date, end_date):
     match table_name:
         case "hydrocron-swot-reach-table":
             collection_shortname = "SWOT_L2_HR_RIVERSP_1.0"
+            pkey = 'reach_id'
+            pkey_type = 'S'
+            skey = 'range_start_time'
+            skey_type = 'S'
         case "hydrocron-swot-node-table":
             collection_shortname = "SWOT_L2_HR_RIVERSP_1.0"
+            pkey = 'node_id'
+            pkey_type = 'S'
+            skey = 'range_start_time'
+            skey_type = 'S'
         case _:
             logging.warning(
                 "Hydrocron table %(table_name) does not exist.", table_name)
@@ -123,10 +128,10 @@ def run(table_name, start_date, end_date):
     else:
         logging.info("creating new table... ")
         dynamo_keys = DynamoKeys(
-            partition_key='reach_id',
-            partition_key_type='S',
-            sort_key='range_start_time',
-            sort_key_type='S')
+            partition_key=pkey,
+            partition_key_type=pkey_type,
+            sort_key=skey,
+            sort_key_type=skey_type)
 
         hydrocron_table = dynamo_instance.create_table(table_name, dynamo_keys)
 
@@ -135,7 +140,8 @@ def run(table_name, start_date, end_date):
         start_date,
         end_date)
 
-    load_data(hydrocron_table, new_granules)
+    for granule in new_granules:
+        load_data(hydrocron_table, granule)
 
 
 if __name__ == "__main__":
