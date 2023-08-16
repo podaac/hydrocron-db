@@ -8,7 +8,7 @@ def upload():
     song = "test01"
     print(song)
     item = {
-        'feature_id': '001'
+        'feature_id': {'id': '001'}
     }
     print(item)
     response = dynamodb.put_item(
