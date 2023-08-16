@@ -14,10 +14,13 @@ def upload():
 
     item_attrs = {}
     for index, row in shp_file.iterrows():
+        print("item")
+        print(index)
+        print(row)
+        print(row.to_json(default_handler=str))
         # convert each reach into a dictionary of attributes that dynamo can read
         item_attrs = json.loads(row.to_json(default_handler=str), parse_float=Decimal)
 
-        print("item")
         print(item_attrs)
         print("--------")
         # write to the table
