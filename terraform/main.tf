@@ -31,10 +31,6 @@ locals {
 
 data "aws_caller_identity" "current" {}
 
-resource "aws_resource_name_in_terraform" "hydrocron_db" {
-  resource_property = "property_value"
-}
-
 resource "aws_dynamodb_table" "hydrocron_swot_reaches" {
     name = "hydrocron_swot_reaches"
     billing_mode = "PROVISIONED"
