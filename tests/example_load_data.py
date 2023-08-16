@@ -18,7 +18,7 @@ def upload():
         print(index)
         print("ROW")
         object = {}
-        for k, v in dict.items():
+        for k, v in row.items():
             print(k)
             print(v)
             object[k] = {'S' : v}
