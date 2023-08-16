@@ -112,4 +112,4 @@ jobs:
 
       - name: Load sample
         #if: ${{ startsWith(github.ref, 'test') }}
-        run: python3 tests/example_load_data.py
+        run: python3 tests/example_load_data.py ${{ secrets[format('AWS_ACCESS_KEY_ID_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }} ${{ secrets[format('AWS_SECRET_ACCESS_KEY_SERVICES_{0}', env.TARGET_ENV_UPPERCASE)] }}
