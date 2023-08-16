@@ -42,8 +42,14 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
 
-
-
+      - name: Install external libraries
+        #if: ${{ startsWith(github.ref, 'test') }}
+        run: |
+          pip3 install boto3
+          pip3 install geopandas
+          pip3 install pytest
+          pip3 install connexion
+          pip3 install flask_testing
           
 
       ## Set environment variables
