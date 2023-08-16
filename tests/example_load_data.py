@@ -17,7 +17,9 @@ def upload():
         # convert each reach into a dictionary of attributes that dynamo can read
         item_attrs = json.loads(row.to_json(default_handler=str), parse_float=Decimal)
 
+        print("item")
         print(item_attrs)
+        print("--------")
         # write to the table
         response = dynamodb.put_item(
             TableName='hydrocron_swot_reaches',
