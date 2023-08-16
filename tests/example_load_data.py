@@ -20,7 +20,7 @@ def upload():
         # write to the table
         response = dynamodb.put_item(
             TableName='hydrocron_swot_reaches',
-            Item=item_attrs
+            Item={item_attrs}
         )
     print(response)
 
