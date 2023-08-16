@@ -14,9 +14,11 @@ def upload():
 
     item_attrs = {}
     for index, row in shp_file.iterrows():
-        print("item")
+        print("ITEM")
         print(index)
+        print("ROW")
         print(row)
+        print(type(row))
         print("^^^^^^^^")
         print(row.to_json(default_handler=str))
         # convert each reach into a dictionary of attributes that dynamo can read
@@ -26,7 +28,7 @@ def upload():
         # write to the table
         response = dynamodb.put_item(
             TableName='hydrocron_swot_reaches',
-            Item=row.to_json(default_handler=str)
+            Item=row
         )
     print(response)
 
