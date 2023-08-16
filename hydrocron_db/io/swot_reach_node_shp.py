@@ -9,7 +9,7 @@ import geopandas as gpd
 
 def read_shapefile(filepath):
     """
-    Reads a SWOT River Reach shapefile
+    Reads a SWOT River Reach shapefile packaged as a zip
 
     Parameters
     ----------
@@ -23,7 +23,11 @@ def read_shapefile(filepath):
         to the database table
     """
 
-    shp_file = gpd.read_file(filepath)
+    if filepath.startswith('s3'):
+        shp_file = gpd.read_file('zip+' + filepath)
+    else:
+        shp_file = gpd.read_file('zip://' + filepath)
+
     shp_file = shp_file.astype(str)
 
     filename = os.path.basename(filepath)

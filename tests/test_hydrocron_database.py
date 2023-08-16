@@ -16,9 +16,7 @@ from hydrocron_db.io import swot_reach_node_shp
 TEST_SHAPEFILE_PATH = (
     "tests/data/"
     "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
-    "20230610T193337_20230610T193344_PIA1_01/"
-    "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
-    "20230610T193337_20230610T193344_PIA1_01.shp")
+    "20230610T193337_20230610T193344_PIA1_01.zip")
 
 TEST_TABLE_NAME = 'hydrocron_test_table'
 TEST_PARTITION_KEY_NAME = 'reach_id'
