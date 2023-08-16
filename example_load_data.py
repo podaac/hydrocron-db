@@ -18,7 +18,7 @@ def upload():
         for k, v in row.items():
             object[k] = {'S' : str(v)}
         response = dynamodb.put_item(
-            TableName='hydrocron_swot_reaches',
+            TableName='hydrocron_swot_reaches_test',
             Item=object
         )
         print(response)

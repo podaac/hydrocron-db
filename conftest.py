@@ -10,4 +10,4 @@ dynamo_test_proc = factories.dynamodb_proc(
         dynamodb_dir="tests/dynamodb_local",
         port=8000)
 
-dynamo_db_resource = factories.dynamodb("hydrocron_swot_reaches")
+dynamo_db_resource = factories.dynamodb("hydrocron_swot_reaches_test")

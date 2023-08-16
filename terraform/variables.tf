@@ -1,5 +1,5 @@
-variable "app_name" {default = "hydrocron-db"}
-variable "db_app_name" {default = "hydrocron-db"}
+variable "app_name" {default = "hydrocron-api-test"}
+variable "db_app_name" {default = "hydrocron-db-test"}
 variable "stage" {}
 variable "vpc_id" {}
 variable "private_subnets" {}
