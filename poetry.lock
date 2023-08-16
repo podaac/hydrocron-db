@@ -150,6 +150,17 @@ files = [
 test = ["pytest (>=6)"]
 
 [[package]]
+name = "factories"
+version = "1.2.0"
+description = "A python package exposing the factory/plugin design pattern"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "factories-1.2.0.tar.gz", hash = "sha256:13a91a486bcf9bd5fdf5563417215403b2f60ec2ab95f94be5e3988b6ca5e1a6"},
+]
+
+[[package]]
 name = "fiona"
 version = "1.9.4.post1"
 description = "Fiona reads and writes spatial data files"
@@ -583,4 +594,4 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "b9415d9369513f248efb3baa19bf15cf8ce0a9abb4667bd38be30b695ee3e584"
+content-hash = "a4090be363e4354ac8abc54ed38a7f5e17f03b70288d2f7d17c9abd2887394bd"

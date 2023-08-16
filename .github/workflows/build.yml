@@ -98,3 +98,8 @@ jobs:
           terraform init -reconfigure -backend-config="bucket=podaac-services-${{ env.THE_ENV }}-terraform" -backend-config="region=us-west-2"
           terraform plan -var-file=tfvars/${{ env.THE_ENV }}.tfvars -var="app_version=${{ env.THE_VERSION }}" -out="tfplan"
           terraform apply -auto-approve tfplan
+          
+
+      - name: Load sample
+        #if: ${{ startsWith(github.ref, 'test') }}
+        run: python3 tests/example_load_data.py

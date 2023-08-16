@@ -1,21 +1,18 @@
 [tool.poetry]
-name = "hydrocron"
-version = "0.0.1"
-description = "Hydrocron API - tool for hydrology"
-authors = ["podaac-tva <podaac-tva@jpl.nasa.gov>"]
+name = "hydrocron-db"
+version = "0.1.0"
+description = "Backend database configuration for Hydrocron API"
+authors = ["PO.DAAC <podaac@jpl.nasa.gov>"]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/podaac/hydrocron-api"
-exclude = ['contrib', 'docs', 'tests']
-packages = [
-    { include = "tests" },
-]
+packages = [{include = "hydrocron_db"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 boto3 = "^1.26.147"
 botocore = "^1.29.147"
 geopandas = "^0.13.1"
+factories = "^1.2.0"
 
 
 [tool.poetry.group.test.dependencies]

@@ -2,10 +2,235 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2226764-961b-4d6f-bae5-1862235f7311" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/Apache-HttpComponents-HttpClient-4.5.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/Apache-HttpComponents-HttpCore-4.4.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsFlowJava-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Annotations-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Auth-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-AwsCore-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-AwsJsonProtocol-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-EndpointsSpi-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-JsonUtils-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-MetricsSpi-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Profiles-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-ProtocolCore-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Regions-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Utils-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-DynamoDb-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-DynamoDb-Enhanced-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-HttpClient-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-HttpClient-ApacheClient-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-HttpClient-NettyNioClient-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/DynamoDBPartiQLShared-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/IonJava.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/JMESPathJava-1.12.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/JakartaCommons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/Log4j-api-2.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/Log4j-core-2.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/Log4j-slf4j-2.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/annotations-13.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/antlr-runtime-4.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/aws-java-sdk-core-1.12.484.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/aws-java-sdk-dynamodb-1.12.484.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/aws-sdk-java-third-party-jackson-core-2.20.90.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/checker-qual-3.23.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/commons-cli-1.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/commons-lang3-3.12.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/error_prone_annotations-2.18.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/failureaccess-1.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/guava-30.1-jre.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/infinispan-common-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/infinispan-embedded-query-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/infinispan-remote-query-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/ion-element-0.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/ion-java-1.5.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/j2objc-annotations-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jackson-annotations-2.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jackson-core-2.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jackson-databind-2.12.7.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jackson-dataformat-cbor-2.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jackson-datatype-jsr310-2.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jakarta.transaction-api-2.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-alpn-client-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-alpn-conscrypt-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-alpn-java-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-alpn-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-annotations-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-cdi-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-client-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-deploy-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-hazelcast-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-http-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-io-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-jaas-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-jakarta-servlet-api-5.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-jaspi-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-jmx-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-jndi-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-keystore-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-memcached-sessions-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-nosql-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-openid-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-plus-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-proxy-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-quickstart-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-rewrite-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-security-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-servlet-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-servlets-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-unixdomain-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-unixsocket-common-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-unixsocket-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-util-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-util-ajax-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-webapp-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jetty-xml-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/joda-time-2.12.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/jsr305-3.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/kotlin-stdlib-1.6.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/kotlin-stdlib-common-1.6.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/kotlin-stdlib-jdk7-1.3.72.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/kotlin-stdlib-jdk8-1.3.72.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/libsqlite4java-osx-aarch64.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/libsqlite4java-osx-x86_64.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/libsqlite4java-osx.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/netty-all-4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/partiql-ir-generator-runtime-0.4.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/partiql-lang-kotlin-0.3.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/reactive-streams-1.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/servlet-api-3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/slf4j-api-1.7.32.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/slf4j-ext-1.7.32.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/sqlite4java-win32-x64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/sqlite4java-win32-x86.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/DynamoDBLocal_lib/sqlite4java.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamodb_local/THIRD-PARTY-LICENSES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hydrocron_db/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hydrocron_db/example_load_data.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hydrocron_db/hydrocron_database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/database_fixtures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/Apache-HttpComponents-HttpClient-4.5.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/Apache-HttpComponents-HttpCore-4.4.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsFlowJava-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Annotations-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Auth-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-AwsCore-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-AwsJsonProtocol-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-EndpointsSpi-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-JsonUtils-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-MetricsSpi-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Profiles-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-ProtocolCore-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Regions-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-Core-Utils-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-DynamoDb-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-DynamoDb-Enhanced-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-HttpClient-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-HttpClient-ApacheClient-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/AwsJavaSdk-HttpClient-NettyNioClient-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/DynamoDBPartiQLShared-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/IonJava.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/JMESPathJava-1.12.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/JakartaCommons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/Log4j-api-2.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/Log4j-core-2.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/Log4j-slf4j-2.x.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/annotations-13.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/antlr-runtime-4.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/aws-java-sdk-core-1.12.484.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/aws-java-sdk-dynamodb-1.12.484.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/aws-sdk-java-third-party-jackson-core-2.20.90.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/checker-qual-3.23.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/commons-cli-1.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/commons-lang3-3.12.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/error_prone_annotations-2.18.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/failureaccess-1.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/guava-30.1-jre.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/infinispan-common-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/infinispan-embedded-query-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/infinispan-remote-query-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/ion-element-0.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/ion-java-1.5.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/j2objc-annotations-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jackson-annotations-2.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jackson-core-2.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jackson-databind-2.12.7.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jackson-dataformat-cbor-2.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jackson-datatype-jsr310-2.12.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jakarta.transaction-api-2.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-alpn-client-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-alpn-conscrypt-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-alpn-java-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-alpn-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-annotations-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-cdi-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-client-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-deploy-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-hazelcast-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-http-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-io-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-jaas-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-jakarta-servlet-api-5.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-jaspi-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-jmx-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-jndi-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-keystore-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-memcached-sessions-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-nosql-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-openid-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-plus-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-proxy-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-quickstart-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-rewrite-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-security-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-servlet-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-servlets-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-unixdomain-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-unixsocket-common-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-unixsocket-server-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-util-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-util-ajax-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-webapp-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jetty-xml-11.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/joda-time-2.12.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/jsr305-3.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/kotlin-stdlib-1.6.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/kotlin-stdlib-common-1.6.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/kotlin-stdlib-jdk7-1.3.72.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/kotlin-stdlib-jdk8-1.3.72.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/libsqlite4java-osx-aarch64.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/libsqlite4java-osx-x86_64.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/libsqlite4java-osx.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/netty-all-4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/partiql-ir-generator-runtime-0.4.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/partiql-lang-kotlin-0.3.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/reactive-streams-1.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/servlet-api-3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/slf4j-api-1.7.32.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/slf4j-ext-1.7.32.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/sqlite4java-win32-x64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/sqlite4java-win32-x86.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/DynamoDBLocal_lib/sqlite4java.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dynamodb_local/THIRD-PARTY-LICENSES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_hydrocron_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_hydrocron_database.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,48 +244,73 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2SWQYWCHB2wG7q1QtYonXlFnWZV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="hydrocron-db" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="hydrocron-db" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/terraform" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_hydrocron_database">
-    <configuration name="test_hydrocron_database" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests in test_hydrocron_database.py">
+    <configuration name="database_fixtures" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hydrocron-db" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/pythonProject/venv/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_hydrocron_database.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/database_fixtures.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_hydrocron_database.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="hydrocron-db" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/Library/Caches/pypoetry/virtualenvs/hydrocron-db-6Sxt1peq-py3.11/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_hydrocron_database.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in /" type="tests" factoryName="Unittests" nameIsGenerated="true">
@@ -80,12 +330,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test_hydrocron_database" />
+      <item itemvalue="Python.database_fixtures" />
       <item itemvalue="Python tests.Unittests in /" />
+      <item itemvalue="Python tests.Python tests in test_hydrocron_database.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_hydrocron_database" />
+        <item itemvalue="Python tests.Python tests in test_hydrocron_database.py" />
+        <item itemvalue="Python.database_fixtures" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +373,11 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/hydrocron_db$test_hydrocron_database.coverage" NAME="test_hydrocron_database Coverage Results" MODIFIED="1692146683369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/hydrocron_db$test_hydrocron_database.coverage" NAME="database_fixtures Coverage Results" MODIFIED="1692149222866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/hydrocron_db$.coverage" NAME=" Coverage Results" MODIFIED="1692151460127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
