@@ -31,16 +31,16 @@ locals {
 
 data "aws_caller_identity" "current" {}
 
-resource "aws_dynamodb_table" "hydrocron_swot_reaches" {
-    name = "hydrocron_swot_reaches"
+resource "aws_dynamodb_table" "hydrocron_swot_reaches_test" {
+    name = "hydrocron_swot_reaches_test"
     billing_mode = "PROVISIONED"
     read_capacity= "30"
     write_capacity= "30"
     attribute {
-        name = "feature_id"
+        name = "reach_id"
         type = "S"
     }
-    hash_key = "feature_id"
+    hash_key = "reach_id"
     ttl {
      enabled = true
      attribute_name = "expiryPeriod"
@@ -52,5 +52,5 @@ resource "aws_dynamodb_table" "hydrocron_swot_reaches" {
 
 module  "table_autoscaling" {
    source = "snowplow-devops/dynamodb-autoscaling/aws"
-   table_name = aws_dynamodb_table.hydrocron_swot_reaches.name
+   table_name = aws_dynamodb_table.hydrocron_swot_reaches_test.name
 }

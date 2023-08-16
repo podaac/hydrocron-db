@@ -16,8 +16,6 @@ def upload():
     for index, row in shp_file.iterrows():
         object = {}
         for k, v in row.items():
-            if (k == 'reach_id'):
-                k = 'feature_id'
             object[k] = {'S' : str(v)}
         response = dynamodb.put_item(
             TableName='hydrocron_swot_reaches',
