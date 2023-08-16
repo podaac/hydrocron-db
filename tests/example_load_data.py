@@ -17,7 +17,7 @@ def upload():
         print("ITEM")
         print(index)
         print("ROW")
-        #print(row)
+        print(row)
         #print(type(row))
         print("^^^^^^^^")
         #print(row.to_json(default_handler=str))
