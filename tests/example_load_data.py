@@ -19,6 +19,8 @@ def upload():
         print("ROW")
         object = {}
         for k, v in row.items():
+            if (k == 'reach_id'):
+                k = 'feature_id'
             object[k] = {'S' : str(v)}
         print(object)
         #print(type(row))
