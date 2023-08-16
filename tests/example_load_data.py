@@ -26,7 +26,11 @@ dynamo_instance = Hydrocron_DB(dyn_resource=dyndb_resource)
 table_name = 'hydrocron_swot_reaches'
 test_shapefile_path = 'tests/data/SWOT_L2_HR_RiverSP_Reach_548_011_NA_20230610T193337_20230610T193344_PIA1_01/SWOT_L2_HR_RiverSP_Reach_548_011_NA_20230610T193337_20230610T193344_PIA1_01.shp'
 
+print("list tables")
+print(dynamo_instance.list_tables())
+
 if dynamo_instance.table_exists(table_name):
+    print("table exists")
     dynamo_instance.delete_table(table_name)
 
 hydrocron_reach_table = dynamo_instance.create_table(table_name,
