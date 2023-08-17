@@ -3,12 +3,29 @@ This module searches for new granules and loads data into
 the appropriate DynamoDB table
 '''
 import logging
+import argparse
 
 import boto3
 import earthaccess
 from hydrocron_db.hydrocron_database import HydrocronDB
 from hydrocron_db.hydrocron_database import DynamoKeys
 from hydrocron_db.io import swot_reach_node_shp
+
+
+def parse_args():
+    '''
+    Argument parser
+    '''
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("-t", "--table-name", dest='table_name', required=True,
+                        help="The name of the database table to add data")
+    parser.add_argument("-sd", "--start_date", dest="start", required=False,
+                        help="The ISO date time after which data should be retrieved. For Example, --start-date 2023-01-01T00:00:00Z")  # noqa E501
+    parser.add_argument("-ed", "--end-date", required=False, dest="end",
+                        help="The ISO date time before which data should be retrieved. For Example, --end-date 2023-02-14T00:00:00Z")  # noqa E501
+
+    return parser.parse_args()
 
 
 def setup_connection():
@@ -20,10 +37,7 @@ def setup_connection():
     dynamo_instance : HydrocronDB
     '''
     session = boto3.session.Session()
-
-    dyndb_resource = session.resource(
-        'dynamodb',
-        endpoint_url='http://localhost:8000')
+    dyndb_resource = session.resource('dynamodb')
 
     dynamo_instance = HydrocronDB(dyn_resource=dyndb_resource)
 
@@ -86,19 +100,17 @@ def load_data(hydrocron_table, granule_path):
               + hydrocron_table.table_name)
 
 
-def run(table_name, start_date, end_date):
+def run(args=None):
     '''
     Main function to manage loading data into Hydrocron
 
-    Parameters
-    ----------
-    table_name : string
-        The name of the table to load data to
-    start_date : string
-        The starting date to search new granules
-    end_date : string
-        The end date to search new granules
     '''
+    if args is None:
+        args = parse_args()
+
+    table_name = args.table_name
+    start_date = args.start
+    end_date = args.end
 
     match table_name:
         case "hydrocron-swot-reach-table":
@@ -142,11 +154,7 @@ def run(table_name, start_date, end_date):
 
 if __name__ == "__main__":
     try:
-        run(
-            table_name='hydrocron-swot-reach-table',
-            start_date='2023-01-01T00:00:00',
-            end_date='2023-03-01T00:00:00')
-
+        run()
     except Exception as e:  # pylint: disable=broad-except
         logging.exception("Uncaught exception occurred during execution.")
         exit(hash(e))
