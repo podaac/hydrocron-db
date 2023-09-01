@@ -177,7 +177,7 @@ class HydrocronDB:
 
 class HydrocronTable:
     """
-    class docstring
+    Class representing a Hydrocron DynamoDB table
     """
     def __init__(self, dyn_resource,
                  table_name,
@@ -195,7 +195,7 @@ class HydrocronTable:
         partition_key_type : string
             the type of the partition key
         sort_key_name : string
-            the name of the sort key, usually time
+            the name of the sort key
         sort_key_type: string
             the type of the sort key.
 
