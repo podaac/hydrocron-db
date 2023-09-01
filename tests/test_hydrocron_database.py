@@ -22,6 +22,7 @@ TEST_TABLE_NAME = 'hydrocron_test_table'
 TEST_PARTITION_KEY_NAME = 'reach_id'
 TEST_SORT_KEY_NAME = 'range_start_time'
 
+
 DYNAMO_KEYS = DynamoKeys(
             partition_key=TEST_PARTITION_KEY_NAME,
             partition_key_type='S',
@@ -95,7 +96,6 @@ def test_add_data(hydrocron_dynamo_instance):
         hydrocron_test_table = hydrocron_dynamo_instance.create_table(
             TEST_TABLE_NAME,
             DYNAMO_KEYS)
-
         items = swot_reach_node_shp.read_shapefile(TEST_SHAPEFILE_PATH)
         for item_attrs in items:
             # write to the table
@@ -122,8 +122,8 @@ def test_query(hydrocron_dynamo_instance):
         hydrocron_test_table.add_data(**item_attrs)
 
     items = hydrocron_test_table.run_query(partition_key='71224100223')
-
     assert items[0]['wse'] == str(286.2983)
+
 
 
 def test_delete_item(hydrocron_dynamo_instance):

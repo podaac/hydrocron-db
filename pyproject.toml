@@ -2,7 +2,7 @@
 name = "hydrocron-db"
 version = "0.1.0"
 description = "Backend database configuration for Hydrocron API"
-authors = ["Your Name <you@example.com>"]
+authors = ["PO.DAAC <podaac@jpl.nasa.gov>"]
 license = "Apache-2.0"
 readme = "README.md"
 packages = [{include = "hydrocron_db"}]
