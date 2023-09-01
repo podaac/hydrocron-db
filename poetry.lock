@@ -21,6 +21,7 @@ tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pyte
 [[package]]
 name = "boto3"
 version = "1.28.20"
+
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">= 3.7"
