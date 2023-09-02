@@ -63,14 +63,13 @@ def parse_from_filename(filename):
 
     filename_components = filename.split("_")
 
-    filename_attrs = {}
-    filename_attrs['cycle_id'] = filename_components[5]
-    filename_attrs['pass_id'] = filename_components[6]
-    filename_attrs['continent_id'] = filename_components[7]
-    filename_attrs['range_start_time'] = datetime.strptime(
-        filename_components[8], '%Y%m%dT%H%M%S').strftime('%Y-%m-%dT%H:%M:%SZ')
-    filename_attrs['range_end_time'] = datetime.strptime(
-        filename_components[9], '%Y%m%dT%H%M%S').strftime('%Y-%m-%dT%H:%M:%SZ')
-    filename_attrs['crid'] = filename_components[10]
+    filename_attrs = {
+        'cycle_id': filename_components[5],
+        'pass_id': filename_components[6],
+        'continent_id': filename_components[7],
+        'range_start_time': datetime.strptime(filename_components[8], '%Y%m%dT%H%M%S').strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'range_end_time': datetime.strptime(filename_components[9], '%Y%m%dT%H%M%S').strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'crid': filename_components[10]
+    }
 
     return filename_attrs

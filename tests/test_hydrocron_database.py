@@ -9,14 +9,17 @@ Requires a local install of DynamoDB to be running.
 See https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html # noqa
 
 """
+import os.path
+
 from hydrocron_db.hydrocron_database import DynamoKeys
 from hydrocron_db.io import swot_reach_node_shp
 
 
-TEST_SHAPEFILE_PATH = (
-    "tests/data/"
-    "SWOT_L2_HR_RiverSP_Reach_548_011_NA_"
-    "20230610T193337_20230610T193344_PIA1_01.zip")
+TEST_SHAPEFILE_PATH = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    'data',
+    'SWOT_L2_HR_RiverSP_Reach_548_011_NA_20230610T193337_20230610T193344_PIA1_01.zip'
+)
 
 TEST_TABLE_NAME = 'hydrocron_test_table'
 TEST_PARTITION_KEY_NAME = 'reach_id'
