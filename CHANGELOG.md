@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [issue/6](https://github.com/podaac/hydrocron-db/issues/6) Add load script to run through the db set up and initial loading of reach and node tables
 - [issue/4](https://github.com/podaac/hydrocron-db/issues/4) Add new io module to add cycle/pass/range times as attributes to allow range time to be used as sort key.
 - [issue/2](https://github.com/podaac/hydrocron-db/issues/2) Initial code for creating SWOT reach/node DynamoDB tables.
 
