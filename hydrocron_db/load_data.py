@@ -7,8 +7,8 @@ import argparse
 
 import boto3
 import earthaccess
-from hydrocron_db.hydrocron_database import HydrocronDB
-from hydrocron_db.hydrocron_database import DynamoKeys
+from botocore.exceptions import ClientError
+from hydrocron_db.hydrocron_database import HydrocronTable
 from hydrocron_db.io import swot_reach_node_shp
 
 
@@ -39,9 +39,7 @@ def setup_connection():
     session = boto3.session.Session()
     dyndb_resource = session.resource('dynamodb')
 
-    dynamo_instance = HydrocronDB(dyn_resource=dyndb_resource)
-
-    return dynamo_instance
+    return dyndb_resource
 
 
 def find_new_granules(collection_shortname, start_date, end_date):
@@ -115,33 +113,18 @@ def run(args=None):
     match table_name:
         case "hydrocron-swot-reach-table":
             collection_shortname = "SWOT_L2_HR_RIVERSP_1.0"
-            pkey = 'reach_id'
-            pkey_type = 'S'
-            skey = 'range_start_time'
-            skey_type = 'S'
         case "hydrocron-swot-node-table":
             collection_shortname = "SWOT_L2_HR_RIVERSP_1.0"
-            pkey = 'node_id'
-            pkey_type = 'S'
-            skey = 'range_start_time'
-            skey_type = 'S'
         case _:
             logging.warning(
                 "Hydrocron table '%s' does not exist.", table_name)
 
-    dynamo_instance = setup_connection()
-
-    if dynamo_instance.table_exists(table_name):
-        hydrocron_table = dynamo_instance.load_table(table_name)
-    else:
-        logging.info("creating new table... ")
-        dynamo_keys = DynamoKeys(
-            partition_key=pkey,
-            partition_key_type=pkey_type,
-            sort_key=skey,
-            sort_key_type=skey_type)
-
-        hydrocron_table = dynamo_instance.create_table(table_name, dynamo_keys)
+    dynamo_resource = setup_connection()
+    try:
+        table = HydrocronTable(dyn_resource=dynamo_resource, table_name=table_name)
+    except ClientError as err:
+        if err.response['Error']['Code'] == 'ResourceNotFoundException':
+            logging.info("Table '%s' does not exist.", table_name)
 
     new_granules = find_new_granules(
         collection_shortname,
@@ -149,16 +132,12 @@ def run(args=None):
         end_date)
 
     for granule in new_granules:
-        load_data(hydrocron_table, granule[0])
+        load_data(table, granule[0])
 
 
-def main():
+if __name__ == "__main__":
     try:
         run()
     except Exception as e:  # pylint: disable=broad-except
         logging.exception("Uncaught exception occurred during execution.")
         exit(hash(e))
-
-
-if __name__ == "__main__":
-    main()
