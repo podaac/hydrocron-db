@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> The code in this repository has been moved to https://github.com/podaac/hydrocron.
+
 # hydrocron-db
 
 Hydrocron-DB manages setting up AWS DynamoDB instance to serve as the backend to the Hydrocron API.
